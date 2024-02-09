@@ -1,0 +1,22 @@
+{% include 'Nav.html'%}
+
+{% for row in product %}
+<div class="container">
+   <div class="row p-0 mt-4">
+      <div class="col-md-6 " style="border: 1px solid rgb(177, 176, 176); border-radius: 20px;">
+         <div class="product_img mt-3">
+            <img src="/{{row.product_img}}" height="100%" class="imf-fluid">
+         </div>
+         <div class="container">
+            <div class="row ">
+               <div class="col-12 mt-4 text-center text-dark">
+                  
+                  <h2>{{row.product_name}}</h2>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+{% endfor %}
+{% include 'Footer.html'%}

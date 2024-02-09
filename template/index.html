@@ -1,0 +1,367 @@
+{% include 'Nav.html'%}
+
+<div class="container-fluid mt-0 p-0">
+
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" style="margin-top:-19px !important ; ">
+			{% for i in slider %}
+			<div class="item {% if forloop.counter == 1%} active {% endif %}">
+				<div class="hero">
+					<div class="container">
+						<div class="row justify-content-between">
+							<div class="col-lg-5">
+								<div class="intro-excerpt">
+									<h3 class="text-white">{{i.slider_titel}}<span clsas="d-block"> </span></h3>
+									<p class="mb-4">{{i.slider_description}}</p>
+									<p><a href="/" class="btn btn-secondary me-2">{{i.slider_btn}}</a><a href="static/#"
+											class="btn btn-white-outline">Explore</a></p>
+								</div>
+							</div>
+							<div class="col-lg-7">
+								<div class="hero-img-wrap">
+									<div style="height: 270px; width: 400px;">
+										<img src="/{{i.slider_image}}" width="100%" alt="Chicago" class="img-fluid">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+
+	<!-- Left and right controls -->
+	<a class="left carousel-control " href="#myCarousel" data-slide="prev" style="height: 470px !important">
+		<span class="glyphicon glyphicon-chevron-left"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" data-slide="next" style="height: 470px !important">
+		<span class="glyphicon glyphicon-chevron-right"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div>
+</div>
+
+<div class="why-choose-section">
+	<div class="container">
+		<div class="row justify-content-between" style="margin-top: -50px;">
+			<div class="col-lg-6">
+				<h1 class="section-title text-center">category</h1>
+
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Start Popular Product -->
+<div class="popular-product">
+	<div class="container">
+		<div class="row" style="margin-top: -100px;">
+
+			{% for i in category%}
+			<div class="col-4 col-md-3 col-lg-2  mb-lg-0 mt-5 mb-0">
+				<div class="product-item-sm d-flex">
+					<div class="thumbnail" style="height: 100px; border-radius: 20px;background-color: rgb(225, 203, 180);">
+						<img src="/{{i.category_logo}}" alt="Image" class="img-fluid mt-3" style="height: 50px;">
+						<h3 class="text-center mt-3"> {{i.category_name}}</h3>
+					</div>
+
+				</div>
+			</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
+<!-- End Popular Product -->
+
+<!-- Start Product Section -->
+<div class="product-section">
+	<div class="container">
+
+		<div class="row" style="margin-top: -130px;">
+
+			<!-- Start Column 1 -->
+			{% for i in product %}
+			<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+				<a class="product-item" href="/product_info?id={{i.id}}">
+					<img src="/{{i.product_img}}" class="img-fluid product-thumbnail" style="height: 300px;">
+					<h3 class="product-title">{{i.product_name}}</h3>
+					<strong class="product-price">₹{{i.product_price}}</strong>
+
+					<span class="icon-cross">
+						<img src="/{{i.product_img}}" class="img-fluid">
+					</span>
+				</a>
+			</div>
+			{% endfor %}
+			<!-- End Column 1 -->
+			<!-- Start Testimonial Slider -->
+			<div class="testimonial-section">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-lg-7 mx-auto text-center">
+							<h2 class="section-title">Upcoming</h2>
+						</div>
+					</div>
+
+					<div class="row justify-content-center">
+						<div class="col-lg-12">
+							<div class="testimonial-slider-wrap text-center">
+
+								<div id="testimonial-nav">
+									<span class="prev" data-controls="prev"><span class="fa fa-chevron-left">
+											</span>
+										</span>
+										<span class="next" data-controls="next"><span class="fa fa-chevron-right"></span></span>
+								</div>
+
+								<div class="testimonial-slider">
+
+
+									<!-- END item -->
+									{% for i in upcoming %}
+									<div class="item">
+										<div class="row justify-content-center">
+
+											<div class="col-lg-8 mx-auto">
+
+												<div class="testimonial-block text-center">
+													<blockquote class="mb-5">
+														<div style="   background-color: red;">
+															<img src="/{{i.upcomming_image}}" width="auto">
+
+														</div>
+													</blockquote>
+
+												</div>
+
+											</div>
+
+
+										</div>
+									</div>
+									{% endfor%}
+									<!-- END item -->
+
+									<!-- END item -->
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- End Testimonial Slider -->
+
+<!-- tv -->
+<div style="background-image:radial-gradient(#25cad8,rgb(67, 188, 248),rgb(12, 139, 164));">
+
+
+	<!-- Start Popular Product -->
+	<section>
+		<div class="text-center container py-5">
+			<h4 class="mt-4 mb-5" style="font-family: sans-serif; font-size: 30px;"><strong class="text-white">new mobile
+					phones</strong></h4>
+
+			<div class="row">
+				{% for i in phone%}
+				<div class="col-lg-2 col-md-4 col-4 mb-4">
+					<div class="card" style="background-color: rgb(169, 208, 241); border-radius: 10px;">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+							data-mdb-ripple-color="light">
+							<img src="/{{i.product_img}}" class="img-fluid" style="height:150px ;" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-success ms-3 mt-3">New</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body" >
+							<a href="" class="text-reset"  style="text-decoration: none;">
+								<h5 class="card-title mb-3 text-dark">{{i.product_name}}</h5>
+							</a>
+							<a href="" class="text-reset" style="text-decoration: none;">
+								<p></p>
+							</a>
+							<h6 class="mb-3"><span class="text-success" style="font-size: 15px;">₹{{i.product_price}}</span>
+							</h6>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+
+			</div>
+
+
+		</div>
+	</section>
+
+</div>
+<div>
+	<div class="text-center container-fluid py-5">
+		<div class="row p-0">
+			<div class="col-md-12">
+			<img class="img_hover" src="https://funkytradition.com/cdn/shop/files/1560770510940-compressed_adfa08d3-b40a-4a87-8a9f-c79dcb15b2d9.jpg?crop=center&height=357&v=1614307336&width=1125"  >
+		</div>
+		</div>
+	</div>
+ 
+
+	<section>
+		<div class="text-center container py-5">
+			 
+
+			<div class="row">
+				{% for i in fashion%}
+				<div class="col-lg-2 col-md-4 col-4 mb-4">
+					<div class="card" style="background-color: rgb(208, 234, 239); border-radius: 10px;">
+						<div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+							data-mdb-ripple-color="light">
+							<img src="/{{i.product_img}}" class="img-fluid" style="height:150px ;" />
+							<a href="#!">
+								<div class="mask">
+									<div class="d-flex justify-content-start align-items-end h-100">
+										<h5><span class="badge bg-success ms-3 mt-3">New</span></h5>
+									</div>
+								</div>
+								<div class="hover-overlay">
+									<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+								</div>
+							</a>
+						</div>
+						<div class="card-body" >
+							<a href="" class="text-reset"  style="text-decoration: none;">
+								<h5 class="card-title mb-3 text-dark">{{i.product_name}}</h5>
+							</a>
+							<a href="" class="text-reset" style="text-decoration: none;">
+								<p></p>
+							</a>
+							<h6 class="mb-3"><span class="text-success" style="font-size: 15px;">₹{{i.product_price}}</span>
+							</h6>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+
+			</div>
+
+
+		</div>
+	</section>
+		
+		<!-- Start Why Choose Us Section -->
+		<div class="why-choose-section">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-lg-6">
+						<h1 class="section-title text-center">Why Choose Us</h1>
+
+					</div>
+				</div>
+				<div class="container">
+
+					<div class="row justify-content-between">
+						<div class="row my-5">
+							{% for i in whychooseus %}
+							<div class="col-6 col-md-4  ">
+								<div class="feature " style="border: 1px solid black; background-color: rgb(255, 255, 255);  border-radius: 20px; box-shadow: 5px 5px 20px black;" >
+									<div class="icon text-center">
+										<img  src="/{{i.whychooseus_logo}}" alt="Image" class="imf-fluid">
+									</div>
+									<h3>{{i.whychooseus_titel}}</h3>
+									<p>{{i.whychooseus_dis}}.</p>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+
+				<!-- End Why Choose Us Section -->
+
+				<!-- Start We Help Section -->
+
+				<!-- End We Help Section -->
+
+
+
+				<!-- Start Blog Section -->
+				<div class="blog-section">
+					<div class="container">
+						<div class="row mb-5">
+							<div class="col-md-6">
+								<h2 class="section-title">Recent Blog</h2>
+							</div>
+							<div class="col-md-6 text-start text-md-end">
+								<a href="static/#" class="more">View All Posts</a>
+							</div>
+						</div>
+
+						<div class="row">
+
+							<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+								<div class="post-entry">
+									<a href="static/#" class="post-thumbnail"><img src="static/images/post-1.jpg" alt="Image"
+											class="img-fluid"></a>
+									<div class="post-content-entry">
+										<h3><a href="static/#">First Time Home Owner Ideas</a></h3>
+										<div class="meta">
+											<span>by <a href="static/#">Kristin Watson</a></span> <span>on <a href="static/#">Dec
+													19,
+													2021</a></span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+								<div class="post-entry">
+									<a href="static/#" class="post-thumbnail"><img src="static/images/post-2.jpg" alt="Image"
+											class="img-fluid"></a>
+									<div class="post-content-entry">
+										<h3><a href="static/#">How To Keep Your Furniture Clean</a></h3>
+										<div class="meta">
+											<span>by <a href="static/#">Robert Fox</a></span> <span>on <a href="static/#">Dec
+													15,
+													2021</a></span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+								<div class="post-entry">
+									<a href="static/#" class="post-thumbnail"><img src="static/images/post-3.jpg" alt="Image"
+											class="img-fluid"></a>
+									<div class="post-content-entry">
+										<h3><a href="static/#">Small Space Furniture Apartment Ideas</a></h3>
+										<div class="meta">
+											<span>by <a href="static/#">Kristin Watson</a></span> <span>on <a href="static/#">Dec
+													12,
+													2021</a></span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- End Blog Section -->
+				{% include 'Footer.html' %}
